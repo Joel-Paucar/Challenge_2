@@ -10,9 +10,9 @@ public class ConversionApi {
     public ConversionApi(){
         client = HttpClient.newHttpClient();
     }
-    public String LlamarApi(String local, String conver) throws IOException, InterruptedException {
+    public String LlamarApi(String local, String conver, double monto) throws IOException, InterruptedException {
         String url = "https://v6.exchangerate-api.com/v6/edafa679a9c67d9774d3772c/pair/" +
-                local+"/"+conver;
+                local+"/"+conver+"/"+monto;
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .build();
